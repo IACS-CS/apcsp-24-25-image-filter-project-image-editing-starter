@@ -1,9 +1,5 @@
 import type { Filter, FilterFunction, FilterOption } from "../types";
 
-const RED = 0;
-const GREEN = 1;
-const BLUE = 2;
-
 /*
 For your first challenge choose one of the below...
 
@@ -23,12 +19,15 @@ const filterImage: FilterFunction = (pixels, width, height) => {
   for (let row = 0; row < height; row++) {
     for (let col = 0; col < width; col++) {
       for (let channel = 0; channel < 3; channel++) {
-        const index = row * 4 * width + col * 4 + channel;
+        const redIndex = row * 4 * width + col * 4 + channel;
+        const greenIndex = redIndex + 1;
+        const blueIndex = redIndex + 2;
+        
         // Now we can do something with the value...
         // e.g. increase each pixel by 40...
-        // pixels[index] = pixels[index] + 40;
+        // pixels[redIndex] = pixels[redIndex] + 40;
         // OR we can increase each pixel by a random amount...
-        // pixels[index] = pixels[index] + Math.random() * 30; //
+        // pixels[blueIndex] = pixels[blueIndex] + Math.random() * 30; //
       }
     }
   }
