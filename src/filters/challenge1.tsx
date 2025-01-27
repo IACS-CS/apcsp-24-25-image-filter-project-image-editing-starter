@@ -9,26 +9,21 @@
    
    */
 
-
 import { percentageOption } from "../filterOptions";
 import type { Filter, FilterOption, FilterFunction } from "../types";
 import { hexToRGBA } from "../utils";
 
-
-const filterImage: FilterFunction = (
-  pixels,
-  width,
-  height
-) => {
+const filterImage: FilterFunction = (pixels, width, height) => {
   // Now try to write a loop that goes through each pixel and
-  // applies the filter to it using an *if* statement!      
+  // applies the filter to it using an *if* statement!
   for (let row = 0; row < height; row++) {
     for (let col = 0; col < width; col++) {
-      for (let channel = 0; channel < 3; channel++) {
-        const index = row * 4 * width + col * 4 + channel;
-        // Now we might use *if* statements to apply a filter
-        // conditionally...
-      }
+      const redIndex = row * 4 * width + col * 4;
+      const greenIndex = redIndex + 1;
+      const blueIndex = redIndex + 2;
+      // Now maybe add an if statement
+      // to add conditional logic based on the pixel's color
+      // or position...
     }
   }
   return pixels;
